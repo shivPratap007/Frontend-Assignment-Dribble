@@ -17,10 +17,6 @@ The web page is inspired by the design and functionality from the following Drib
 - CSS
 - JavaScript (Vanilla)
 
-## How to Run
-1. Clone the repository:
-   ```bash
-   [git clone https://github.com/your-username/your-repo-name.git](https://github.com/shivPratap007/Frontend-Assignment-Dribble.git)
 
 ## Files Included
 - `index.html`: The main HTML file.
@@ -28,7 +24,7 @@ The web page is inspired by the design and functionality from the following Drib
 - `script.js`: The JavaScript file implementing the page functionality.
 
 ## Demo
-You can view the live demo of the project at [Your Live URL]([https://your-live-url.com](https://frontend-assignment-dribble.vercel.app/)).
+You can view the live demo of the project at [Frontend Assignment Dribble](https://frontend-assignment-dribble.vercel.app/).
 
 ## Submission
 The project has been deployed on GitHub as part of the assignment. Please review the repository for code and implementation details.
@@ -37,9 +33,8 @@ The project has been deployed on GitHub as part of the assignment. Please review
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For any questions or feedback, please reach out to [Your Email](sp09singhwaghel@gmail.com).
+For any questions or feedback, please reach out to [sp09singhwaghel@gmail.com](mailto:sp09singhwaghel@gmail.com).
 
 ## Acknowledgements
 - Thanks to Dribbble for the design inspiration.
 - Special thanks to the Celebrare team for providing this assignment opportunity.
-
