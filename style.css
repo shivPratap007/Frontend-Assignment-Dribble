@@ -158,22 +158,39 @@ nav {
 .radiating-circle {
   display: inline-block;
   vertical-align: middle;
-  width: 20px;
-  height: 20px;
+  padding-right: 5px;
+  width: 13px; /* Smaller size for the dot */
+  height: 13px; /* Smaller size for the dot */
   border-radius: 50%;
-  background-color: rgba(0, 255, 0, 1);
+  background-color: rgba(2, 48, 32, 1); /* Green color */
   background: radial-gradient(
     circle,
-    rgba(0, 255, 0, 1) 0%,
-    rgba(0, 255, 0, 0.5) 40%,
-    rgba(0, 255, 0, 0) 100%
+    rgba(2, 48, 32, 1) 0%,
+    /* Solid green in the center */ rgba(2, 48, 32, 0.5) 50%,
+    /* Semi-transparent green */ rgba(0, 255, 0, 0) 100%
+      /* Fully transparent at the edges */
   );
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5),
-    0 0 30px rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 5px rgba(2, 48, 32, 0.7),
+    /* Smaller shadow */ 0 0 10px rgba(2, 48, 32, 0.5),
+    0 0 15px rgba(2, 48, 32, 0.3);
 
-  animation: pulse 0.5s ease-in-out infinite;
-  animation-delay: 500ms;
+  animation: pulse 3s ease-in-out infinite;
   opacity: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5); /* Increase size slightly */
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .follow {
@@ -381,34 +398,83 @@ nav {
 }
 
 .card .hover-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
   opacity: 0;
-  transition: opacity 0.3s ease; /* Fade-in effect on hover */
+  visibility: hidden;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show hover-content on hover */
+.card:hover .hover-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card {
+  background-color: #fff;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Container for the image and hover-content */
+.image-container {
+  position: relative;
+}
+
+/* Style for the image */
+.image-container img {
+  width: 100%; /* Make sure the image fills the container */
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Hover content styling */
+.image-container .hover-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(47, 47, 48, 0.5); /* Light black with transparency */
+  background: linear-gradient(
+    0deg,
+    rgba(47, 47, 48, 0.5) 0%,
+    /* Semi-transparent light black */ rgba(98, 99, 96, 0.3) 37%,
+    /* Semi-transparent gray */ rgba(167, 171, 168, 0.1) 69%,
+    /* Light gray */ rgba(235, 240, 235, 0) 100% /* Transparent */
+  ); /* Light black to transparent gradient */
   color: white;
-}
-
-.card .hover-content h2 {
-  margin-bottom: 10px; /* Space between heading and icons */
-  font-size: 18px;
-}
-
-/* Styles for Icons */
-.card .hover-content .icons {
+  opacity: 0;
+  visibility: hidden;
   display: flex;
-  justify-content: center;
-  gap: 15px; /* Space between icons */
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.card .hover-content .icons i {
+/* Show hover-content on image hover */
+.image-container:hover .hover-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styling for icons inside hover-content */
+.image-container .hover-content .icons {
+  display: flex;
+  gap: 15px;
+}
+
+.image-container .hover-content .icons i {
   background-color: #fff;
   color: #000;
   border-radius: 50%;
   padding: 8px;
-  font-size: 18px; /* Adjust icon size */
+  font-size: 18px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
