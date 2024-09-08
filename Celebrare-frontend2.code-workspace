@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Celebrare-frontend2",
+			"path": "."
+		},
+		{
+			"name": "assets",
+			"path": "../Celebrare-frontend/assets"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Celebrare-frontend2"
+	}
+}
